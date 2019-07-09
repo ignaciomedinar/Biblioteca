@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load socialaccount %}
 
 {% block title %}Entrada al sistema{% endblock %}
 
@@ -24,6 +25,17 @@
             </div>
           </div>
         </aside>
+
+        <hr />
+        <aside class="form-group">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <a href="{% provider_login_url "facebook" method="oauth2" %}"
+                class="btn btn-primary btn-block">Facebook</a>
+            </div>
+          </div>
+        </aside>
+
         {% if next %}
         <input type="hidden" name="next" value="{{ next }}" />
         {% else %}
